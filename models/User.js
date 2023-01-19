@@ -25,6 +25,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
+        match: [] //-- need to add regex for match
+            //Strings have 'match' validators - https://mongoosejs.com/docs/validation.html
     }
 })
 
