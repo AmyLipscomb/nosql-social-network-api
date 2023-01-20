@@ -13,8 +13,9 @@ const thoughtSchema = new mongoose.Schema({
     thoughtText: {
         type: String,
         required: true,
-        minLength: [1, "Must have at least one character!"],
-        maxLength: [280]
+        minLength: [1] ,
+        maxLength: [280],
+        // default: "Must have at least one character!",
     },
 
     // * `createdAt`
@@ -44,6 +45,7 @@ const thoughtSchema = new mongoose.Schema({
     reactions: [
         {
             type: Schema.Types.ObjectId,
+            ref: 'Reaction'
         }
     ]
 },
@@ -56,12 +58,19 @@ const thoughtSchema = new mongoose.Schema({
 
 )
 
-// **Schema Settings**: - NEED HELP!
+// **Schema Settings**: 
 
 // Create a virtual called `reactionCount` that retrieves the length of the thought's `reactions` array field on query.
+    //Refer to Mod 18 Activity 21- Virtuals
+
+thoughtSchema.virtual("reactionCount").get(function () {
+    return this.reactions.length;
+});
 
 
 
+
+// Initialize Thought model
 const Thought = model('thought', thoughtSchema);
 
 module.exports = Thought;
@@ -81,4 +90,3 @@ module.exports = Thought;
 
 
 
-// ---
