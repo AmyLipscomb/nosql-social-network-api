@@ -1,9 +1,10 @@
 // Define Mongoose
 const { Schema, model } = require('mongoose');
+const reactionSchema = require('./Reaction');
 
 // Create a new instance of the Mongoose schema to define shape of each document
 
-const thoughtSchema = new mongoose.Schema({
+const thoughtSchema = new Schema({
 
     // * `thoughtText` 
     //   * String
@@ -25,10 +26,8 @@ const thoughtSchema = new mongoose.Schema({
 
     createdAt: {
         type: Date,
-        default: Date.now(),
-        toJSON: {
-            getters: true,
-        }
+        default: Date.now,
+     
     },
 
 
@@ -43,18 +42,15 @@ const thoughtSchema = new mongoose.Schema({
     // * `reactions` (These are like replies)
     //   * Array of nested documents created with the `reactionSchema`
     reactions: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Reaction'
-        }
+       reactionSchema
     ]
 },
 
-    // {
-    //     toJSON: {
-    //         getters: true,
-    //     }
-    // },
+    {
+        toJSON: {
+            getters: true,
+        }
+    },
 
 )
 

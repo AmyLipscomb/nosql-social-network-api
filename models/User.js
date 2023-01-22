@@ -2,7 +2,7 @@
 const { Schema, model } = require('mongoose');
 
 // Create a new instance of the Mongoose schema to define shape of each document
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
 
     // * `username` 
     //   * String
@@ -37,7 +37,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
-        match: [] //-- need to add regex for match
+        match: [/^[A-Z0-9+_.-]+@[A-Z0-9.-]+$/i] 
+        //-- need to add regex for match
         //Strings have 'match' validators - https://mongoosejs.com/docs/validation.html
     },
 

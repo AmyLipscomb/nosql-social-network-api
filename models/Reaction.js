@@ -1,9 +1,8 @@
-// **Reaction** (SCHEMA ONLY) <- not sure what this means
-const { ObjectId } = require('bson');
-const { Schema, model } = require('mongoose');
+// **Reaction** (SCHEMA ONLY) 
+const { Schema } = require('mongoose');
 
 // Create a new instance of the Mongoose schema to define shape of each document
-const reactionSchema = new mongoose.Schema({
+const reactionSchema = new Schema({
 
 // * `reactionId`
 //   * Use Mongoose's ObjectId data type
@@ -11,7 +10,7 @@ const reactionSchema = new mongoose.Schema({
 
 reactionId: {
     type: Schema.Types.ObjectId,
-    default: () => new ObjectId //not sure if this is correct?
+    default: () => new Schema.Types.ObjectId() 
 },
 
 // * `reactionBody`
@@ -41,14 +40,18 @@ username: {
 
 createdAt: {
     type: Date,
-    default: Date.now(),
+    default: Date.now,
+}
+},
+
+{
     toJSON: {
         getters: true,
     }
-},
-});
+}
+);
 
 
-
+module.exports = reactionSchema;
 
 
