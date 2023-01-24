@@ -5,7 +5,8 @@ const {
     createThought,
     updateThought,
     deleteThought,
-    createReaction
+    createReaction,
+    removeReaction
 } = require("../../controllers/thoughtController");
 
 // /api/thoughts
@@ -19,7 +20,7 @@ router
 
 router.route("/:thoughtId/reactions").post(createReaction)
      //whatever i create in my thought controller will be in the parentheses
-router.route("/:thoughtId/reactions/:reactionId").delete() 
+router.route("/:thoughtId/reactions/:reactionId").delete(removeReaction); 
     //whatever i create in my thought controller will be in the parentheses
 
 module.exports = router;
