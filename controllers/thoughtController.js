@@ -11,13 +11,35 @@ module.exports = {
  //`GET` a single thought by its `_id` and populated thought and friend data -- NEED HELP
  getSingleThought(req, res) {
     Thought.findOne({_id: req.params.thoughtId})
-
+    .then((thought) => {
+        if(!thought){
+            return res.status(404).json({message: "There is no thought with this id!"})
+        }
+        res.json(thought)
+    })
+    .catch((err) => {
+        console.log(err);
+        return res.status(500).json(err)
+    });
+ 
 },
 
     // * `POST` (create) a new thought:
     createThought(req, res) {
         Thought.create(req.body)
-        .then((thought) => res.json (thought))
+        .then((thought) => {
+            return User.findOneAndUpdate(
+                {_id: req.body.userId},
+                { $push: {thoughts:thought._id}},
+                { new: true}
+                )
+        } ) 
+        .then((user) =>{
+            if(!user){
+                return res.status(404).json({message: "The thought was created but there was no user with this id!"})
+            }
+            res.json(user)
+        })
         .catch((err) => {
             console.log(err);
             return res.status(500).json(err)
@@ -50,7 +72,20 @@ module.exports = {
             // **BONUS**: Remove a user's associated thoughts when deleted.
             .then(() => res.json({ message: "User and thoughts deleted!" }))
             .catch((err) => res.status(500).json(err));
-        }
-    
+        },
+
+        createReaction(req, res){
+            Thought.findOneAndUpdate(
+                {_id: req.params.thoughtId},
+                { $addToSet: {reactions:req.body}},
+                { runValidators: true, new: true}
+                )
+                .then ((thought) => 
+                !thought
+                ? res.status(404).json({ message: "No thought with this id!"})
+                : res.json(thought)
+                )
+                .catch((err) => res.status(500).json(err));
+            },
     };
     

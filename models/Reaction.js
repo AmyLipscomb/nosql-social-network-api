@@ -47,7 +47,8 @@ createdAt: {
 {
     toJSON: {
         getters: true,
-    }
+    },
+    id: false
 }
 );
 
