@@ -21,22 +21,20 @@ Almost everyone uses at least one form of social media. As a result, it's import
 
 ---
 ## Installation
-<!-- 
-The first step in creating my tech blog was first installing the necessary dependencies. In total eight npm packages were used. For further reference, the links can be found in the "Technologies" section! I also had to utilize MySQL.  -->
 
+After setting up my repo, the first action item I tackled was creating the file structure. I knew I needed a 'connection file' that created a connection to Mongoose and my 'socialNetworkDB', models, routes and last but not least, a server. Once that was complete, I moved on to installing two npm packages- [Express](https://www.npmjs.com/package/express) and [Mongoose](https://www.npmjs.com/package/mongoose). To install the packages, I typed the following into the command line:
+```
+ npm i express --save; npm i mongoose
+ ```
 
 
 ---
 
 ## Usage
 
-  <!-- The first step to my tracker was creating a database that would hold the data I wanted to track. In order to do that, I created a schema file. Within this file, databases can be dropped (deleted), created, and used. Typically, when creating a database, it's best to "drop it" first. This ensures you're starting fresh, when you create your new database. You can see the steps I took in the screenshot below! -->
 
-  <!-- ![createdatabase](./assets/css/images/dropcreateusedb.png) -->
 
-  <!-- The schema file not only holds the creation of the database, but also its' tables. Every table needs data in order for it to be useful. So, once the tables are made, a seed file has to be created. The seed file inserts the data into the tables created within the schema. Below is a screenshot of the code I wrote for the department table. The schema file is on the left and the seed file is to the right.  -->
-  
-  <!-- ![schema&seed](./assets/css/images/departmentschemaandseed.png) -->
+
 
   
 
@@ -70,7 +68,8 @@ None.
 * MongoDB
 * Node.js
     * npm packages:
-       * [express](https://www.npmjs.com/package/express)    
+       * [express](https://www.npmjs.com/package/express)  
+       * [mongoose](https://www.npmjs.com/package/mongoose)  
 * Insomnia
 * Screencatisfy
 * VS Code

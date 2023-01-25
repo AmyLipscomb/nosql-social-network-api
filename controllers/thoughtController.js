@@ -8,7 +8,7 @@ module.exports = {
             .catch((err) => res.status(500).json(err));
     },
 
- //`GET` a single thought by its `_id` and populated thought and friend data -- NEED HELP
+ //`GET` a single thought by its `_id` and populated thought and friend data 
  getSingleThought(req, res) {
     Thought.findOne({_id: req.params.thoughtId})
     .then((thought) => {
