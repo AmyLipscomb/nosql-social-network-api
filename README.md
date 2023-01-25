@@ -32,12 +32,43 @@ After setting up my repo, the first action item I tackled was creating the file 
 
 ## Usage
 
+Once the server and the connection file were created, I began to create my models.
+
+ <strong>User Model</strong>
+
+ This model was created to store information about the user. Information like a username, email address, thoughts and friends. To create the username and email address I used a regex that would only allow names and emails that fit the criteria. For the username, I used the regex:
+
+ ```
+ /[A-Za-z0-9\- ]+/
+ ```
+ This regex means that any letter (uppercase or lowercase can be used, can contain numbers 0-9, can include a hyphen, has one or more instances). For more information about regex- please feel free to visit my [regex gist](https://gist.github.com/AmyLipscomb).
+
+ I also created a 'friends' array that self-referenced the User Model, and a 'thoughts' array that referenced the Thought Model. I then created a virtual, that would allow the retrieval of one's friend count. 
+
+ <strong>Thought Model</strong>
+
+This model was created to store information about the the thought and the user who created it. Within this model, I created a 'reactions' array that connected to the 'reactionSchema'. I then created a virtual, that would allow the retrieval of one's reaction count. 
+
+ <strong>Index Model</strong>
+
+ This model's purpose was created to bridge the gap between the User and Thought model. 
+
+--
+
+ After the models were created, I created two controllers - one for User and one for Thought. Within the controllers, I created HTTP requests. Take a look at my code! 
+
+ <strong>User Controller</strong>
+
+ ![userController](./utils/assets/images/userController1.jpeg)
+ ![userController](./utils/assets/images/userController2.jpeg)
+
+  <strong>Thought Controller Code</strong>
+
+  ![thoughtController](./utils/assets/images/thoughtController1.jpeg)
+  ![thoughtController](./utils/assets/images/thoughtController2.jpeg)
 
 
-
-
-  
-
+Then I created the API routes, and tested them in Insomnia! 
 
 ---
 

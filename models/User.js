@@ -32,7 +32,7 @@ const userSchema = new Schema({
     //   * String 
     //   * Required 
     //   * Unique 
-    //   * Must match a valid email address (look into Mongoose's matching validation) - ASK SARA during session what's a good one
+    //   * Must match a valid email address (look into Mongoose's matching validation) 
     email: {
         type: String,
         required: true,
