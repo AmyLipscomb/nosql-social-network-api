@@ -57,7 +57,7 @@ This model was created to store information about the the thought and the user w
 
  After the models were created, I created two controllers - one for User and one for Thought. Within the controllers, I created HTTP requests. Take a look at my code! 
 
- <strong>User Controller</strong>
+ <strong>User Controller Code</strong>
 
  ![userController](./utils/assets/images/userController1.jpeg)
  ![userController](./utils/assets/images/userController2.jpeg)
