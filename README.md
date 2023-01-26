@@ -3,7 +3,9 @@
 
 ## Description
 
-Almost everyone uses at least one form of social media. As a result, it's important as a developer to know and understand the technologies that many social platforms use. I've created a social networking API, that allows its' users to add (or remove) friends &#128527;, share thoughts and reactions. The best part is, if anyone overshares or overreacts, as many do on social media, they can delete their thought &#128173; and reaction! To find out how I was able to create this api, please watch my [walkthrough video](https://app.castify.com/view/b1a74d0e-7156-4733-8925-626cf32472ae)! 
+Almost everyone uses at least one form of social media. As a result, it's important as a developer to know and understand the technologies that many social platforms use. I've created a social networking API, that allows its' users to add (or remove) friends &#128527;, share thoughts and reactions. The best part is, if anyone overshares or overreacts, as many do on social media, they can delete their thought &#128173; and reaction! To find out how I was able to create this api, please watch my [walkthrough video](https://app.castify.com/view/c1045bdd-eea7-4063-902e-1706c56a6e77)!
+
+<!-- (https://app.castify.com/view/b1a74d0e-7156-4733-8925-626cf32472ae)!  -->
 
 
 
