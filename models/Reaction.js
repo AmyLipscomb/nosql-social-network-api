@@ -1,5 +1,5 @@
 // **Reaction** (SCHEMA ONLY) 
-const { Schema } = require('mongoose');
+const { Schema, Types } = require('mongoose');
 
 // Create a new instance of the Mongoose schema to define shape of each document
 const reactionSchema = new Schema({
@@ -9,8 +9,8 @@ const reactionSchema = new Schema({
 //   * Default value is set to a new ObjectId
 
 reactionId: {
-    type: Schema.Types.ObjectId,
-    default: () => new Schema.Types.ObjectId() 
+    type: Types.ObjectId,
+    default: () => new Types.ObjectId() 
 },
 
 // * `reactionBody`

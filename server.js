@@ -7,7 +7,7 @@ const routes = require('./routes');
 const cwd = process.cwd();
 
 //server configuration 
-const PORT = process.env.port || 3001;
+const PORT = process.env.port || 4001;
 const app = express();
 
 //installing middleware
